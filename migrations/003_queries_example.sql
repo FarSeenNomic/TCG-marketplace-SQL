@@ -41,6 +41,15 @@ JOIN card c ON c.id = gci.card
 WHERE ct.id = 2
 GROUP BY ct.id;
 
+--Read #4 display all generic cart items where the card deosnt ecists in card table
+SELECT *
+FROM generic_cart_item g
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM card c
+    WHERE c.id = g.card
+);
+
 
 -- =========================
 -- UPDATE — 3 examples
@@ -81,6 +90,19 @@ WHERE seller_status = 'pending';
 -- DELETE #3: Delete a card entirely (cascades to mtg_card/ygo_card/eso_card, card_instance, generic_cart_item, and specific_cart_item)
 DELETE FROM card
 WHERE id = 1;
+
+--DELETE #4 Delete an account entirely (cascades to cart, card_instance, specific_cart_item, Generic cart_item)
+DELETE FROM account
+WHERE id = 1;
+
+--DELETE #5 Delete a generic cart item
+DELETE FROM generic_cart_item g
+WHERE NOT EXISTS (
+  SELECT 1
+    FROM card c
+    WHERE c.id = g.card
+);
+  
 
 -- Roll back so the database isn't permanently changed by demo deletes
 ROLLBACK;
