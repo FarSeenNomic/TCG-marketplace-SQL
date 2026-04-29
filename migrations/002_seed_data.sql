@@ -5,7 +5,7 @@
 INSERT INTO card (id, cardname, price) VALUES
 (1, 'Black Lotus', 50000.00),
 (2, 'Blue-Eyes White Dragon', 1500.00),
-(3, 'Elder Dragon', 30.00),
+(3, 'Nuke-U-Lur Meltdown', 0.50),
 (4, 'Dark Magician', 250.00),
 (5, 'Mox Pearl', 3000.00),
 (6, 'Glow-up Bulb', 50.00),
@@ -44,7 +44,11 @@ INSERT INTO ygo_card (id, level, "set") VALUES
 -- 4. Insert into eso_card
 -- 3: Elder Dragon
 INSERT INTO eso_card (id, "desc", "position", mana) VALUES
-(3, 'nuke-u-lur meltdown', 'Delivery', 'Elemental'),
+(3, 'Target: Your strongest foe
+Roll Power
+1-4 1 damage
+5-9 3 damage, and 1 damange to each player adjacent to that foe.
+10+ As above, but 5 damange instead of 3.', 'Delivery', 'Elemental'),
 (12, 'The card copies the text of the Delivery of your spell.', 'Source', 'Arcane'),
 (13, 'Reveal the top four cards of the Main Deck. Add any revealed Source cards to your spell and discard the rest.', 'Source', 'Illusion'),
 (14, 'The foes to your left and to your right must each choose one of his Treasures and give it to you or suffer 3 damage.', 'Quality', 'Illusion'),
