@@ -38,8 +38,9 @@ INSERT INTO eso_card (id, "desc", "position", mana) VALUES
 INSERT INTO account (cc, address) VALUES
 (1234567812345678, '123 Main St, Springfield'),
 (8765432187654321, '456 Elm St, Shelbyville'),
-(1111222233334444, '789 Oak Ave, Capital City');
-
+(1111222233334444, '789 Oak Ave, Capital City'),
+(1231231231231231, '42 Wallaby way, Sydney'),
+(5555555555555555, '#4 privot drive, Cupboard under the stairs');
 -- account IDs: 1, 2, 3
 
 -- 6. Insert into seller_brand
