@@ -10,7 +10,14 @@ INSERT INTO card (id, cardname, price) VALUES
 (5, 'Mox Pearl', 3000.00),
 (6, 'Glow-up Bulb', 50.00),
 (7, 'Exodia, the forbidden one', 40.43),
-(8, 'Exodia, the forbidden one', 1.40);
+(8, 'Exodia, the forbidden one', 1.40),
+(9, 'Aardvark Sloth', 0.12),
+(10, 'Blessing', 2.99),
+(11, 'Reach Through Mists', 0.16),
+(12, 'Beard\'o Blasty\'s', 0.50),
+(13, 'Pew and Pew\'s', 0.50),
+(14, 'Ballsy', 0.50),
+(15, 'Inferno-Tastic', 0.50);
 
 -- card IDs will be 1, 2, 3, 4, 5
 
@@ -18,7 +25,12 @@ INSERT INTO card (id, cardname, price) VALUES
 -- 1: Black Lotus, 5: Mox Pearl
 INSERT INTO mtg_card (id, colour, "desc") VALUES
 (1, 'black', 'Adds 3 mana of any single color of your choice to your mana pool.'),
-(5, 'white', 'Adds 1 white mana to your mana pool.');
+(5, 'white', 'Adds 1 white mana to your mana pool.'),
+(9, 'white', 'Lifelink'),
+(10, 'white', 'Enchant creature
+
+{W}: Enchanted creature gets +1/+1 until end of turn.'),
+(11, 'blue', 'Draw a card.');
 
 -- 3. Insert into ygo_card
 -- 2: Blue-Eyes White Dragon, 4: Dark Magician
@@ -32,7 +44,11 @@ INSERT INTO ygo_card (id, level, "set") VALUES
 -- 4. Insert into eso_card
 -- 3: Elder Dragon
 INSERT INTO eso_card (id, "desc", "position", mana) VALUES
-(3, 'A mighty Elder Dragon from the realm.', 'Frontline', 'High');
+(3, 'nuke-u-lur meltdown', 'Delivery', 'Elemental'),
+(12, 'The card copies the text of the Delivery of your spell.', 'Source', 'Arcane'),
+(13, 'Reveal the top four cards of the Main Deck. Add any revealed Source cards to your spell and discard the rest.', 'Source', 'Illusion'),
+(14, 'The foes to your left and to your right must each choose one of his Treasures and give it to you or suffer 3 damage.', 'Quality', 'Illusion'),
+(15, 'Deal 1 damage to each foe for each Elemental glyph in your spell.', 'Quality', 'Elemental');
 
 -- 5. Insert into account
 INSERT INTO account (cc, address) VALUES
