@@ -60,7 +60,7 @@ INSERT INTO account (id,cc, address) VALUES
 (2,8765432187654321, '456 Elm St, Shelbyville'),
 (3,1111222233334444, '789 Oak Ave, Capital City'),
 (4,1231231231231231, '42 Wallaby way, Sydney'),
-(5,5555555555555555, '#4 privot drive, Cupboard under the stairs');
+(5,7777777777777777, '#4 privot drive, Cupboard under the stairs');
 -- account IDs: 1, 2, 3
 
 -- 6. Insert into seller_brand
