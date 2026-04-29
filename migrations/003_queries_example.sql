@@ -2,7 +2,7 @@
 -- Purpose: Example queries for TCG Marketplace project
 
 -- =========================
--- READ (SELECT) — 3 examples
+-- READ (SELECT) — 6 examples
 -- =========================
 
 -- READ #1: List all cards currently up for sale (card_instances) with base card details and seller address.
@@ -52,7 +52,7 @@ WHERE NOT EXISTS (
 
 
 -- =========================
--- UPDATE — 3 examples
+-- UPDATE — 6 examples
 -- =========================
 
 -- UPDATE #1: Update the price of a specific card
@@ -72,7 +72,7 @@ WHERE id = 1;
 
 
 -- =========================
--- DELETE — 3 examples
+-- DELETE — 6 examples
 -- =========================
 -- NOTE: In real systems, deletes are often replaced with "soft delete" (is_deleted flag).
 -- For class requirements, here are real DELETE examples wrapped in a transaction and rolled back.
