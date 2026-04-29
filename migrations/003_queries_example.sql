@@ -2,6 +2,22 @@
 -- Purpose: Example queries for TCG Marketplace project
 
 -- =========================
+-- VIEW — 1 examples
+-- =========================
+-- VIEW #1 - saves a select that shows a table of all ygo_cards and their parameters that appear in card table.
+CREATE VIEW ygo_card_view AS
+SELECT
+  c.id,
+  c.cardname,
+  c.price,
+  y.level,
+  y."set"
+FROM card c
+JOIN ygo_card y ON y.id = c.id;
+
+
+
+-- =========================
 -- READ (SELECT) — 6 examples
 -- =========================
 
