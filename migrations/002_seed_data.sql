@@ -35,19 +35,22 @@ INSERT INTO eso_card (id, "desc", "position", mana) VALUES
 (3, 'A mighty Elder Dragon from the realm.', 'Frontline', 'High');
 
 -- 5. Insert into account
-INSERT INTO account (cc, address) VALUES
-(1234567812345678, '123 Main St, Springfield'),
-(8765432187654321, '456 Elm St, Shelbyville'),
-(1111222233334444, '789 Oak Ave, Capital City'),
-(1231231231231231, '42 Wallaby way, Sydney'),
-(5555555555555555, '#4 privot drive, Cupboard under the stairs');
+INSERT INTO account (id,cc, address) VALUES
+(1,1234567812345678, '123 Main St, Springfield'),
+(2,8765432187654321, '456 Elm St, Shelbyville'),
+(3,1111222233334444, '789 Oak Ave, Capital City'),
+(4,1231231231231231, '42 Wallaby way, Sydney'),
+(5,5555555555555555, '#4 privot drive, Cupboard under the stairs');
 -- account IDs: 1, 2, 3
 
 -- 6. Insert into seller_brand
 -- Account 1 sells MTG, Account 2 sells YGO
 INSERT INTO seller_brand (id, game, seller_status) VALUES
 (1, 'Magic: The Gathering', 'yes'),
-(2, 'Yu-Gi-Oh!', 'pending');
+(1, 'Yu-Gi-Oh!', 'pending'),
+(2, 'Yu-Gi-Oh!', 'no'),
+(2, 'ESO', 'yes'),
+(2, 'Magic: The Gathering', 'pending');
 
 -- 7. Insert into cart
 -- Account 3 creates a cart
