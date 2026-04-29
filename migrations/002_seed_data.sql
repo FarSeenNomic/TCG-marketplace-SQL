@@ -2,12 +2,12 @@
 -- Purpose: Insert sample data (seed data)
 
 -- 1. Insert into card
-INSERT INTO card (cardname, price) VALUES
-('Black Lotus', 50000.00),
-('Blue-Eyes White Dragon', 1500.00),
-('Elder Dragon', 30.00),
-('Dark Magician', 250.00),
-('Mox Pearl', 3000.00);
+INSERT INTO card (id, cardname, price) VALUES
+(1, 'Black Lotus', 50000.00),
+(2, 'Blue-Eyes White Dragon', 1500.00),
+(3, 'Elder Dragon', 30.00),
+(4, 'Dark Magician', 250.00),
+(5, 'Mox Pearl', 3000.00);
 
 -- card IDs will be 1, 2, 3, 4, 5
 
