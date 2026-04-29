@@ -97,18 +97,18 @@ INSERT INTO card_instance (id, instance_of, condition, seller, date, processed) 
 
 -- 9. Insert into specific_cart_item
 -- Cart 1 adds specific card instances
-INSERT INTO specific_cart_item (id, card, cart) VALUES
-(1, 1, 1),
-(2, 2, 1),
-(3, 3, 2),
-(4, 4, 3),
-(5, 5, 4);
+INSERT INTO specific_cart_item (card, cart) VALUES
+(1, 1),
+(2, 1),
+(3, 2),
+(4, 3),
+(5, 4);
 
 -- 10. Insert into generic_cart_item
 -- Cart 2 adds a generic quantity of Elder Dragon
-INSERT INTO generic_cart_item (id, quantity, card, cart) VALUES
-(1, 1, 2, 3),
-(2, 4, 3, 3),
-(3, 3, 5, 3),
-(4, 1, 7, 4),
-(5, 2, 11, 5);
+INSERT INTO generic_cart_item (quantity, card, cart) VALUES
+(1, 2, 3),
+(4, 3, 3),
+(3, 5, 3),
+(1, 7, 4),
+(2, 11, 5);
