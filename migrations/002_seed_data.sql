@@ -7,7 +7,8 @@ INSERT INTO card (id, cardname, price) VALUES
 (2, 'Blue-Eyes White Dragon', 1500.00),
 (3, 'Elder Dragon', 30.00),
 (4, 'Dark Magician', 250.00),
-(5, 'Mox Pearl', 3000.00);
+(5, 'Mox Pearl', 3000.00),
+(6, 'Glow-up Bulb', 50.00);
 
 -- card IDs will be 1, 2, 3, 4, 5
 
@@ -21,7 +22,8 @@ INSERT INTO mtg_card (id, colour, "desc") VALUES
 -- 2: Blue-Eyes White Dragon, 4: Dark Magician
 INSERT INTO ygo_card (id, level, "set") VALUES
 (2, 8, 'Legend of Blue Eyes White Dragon'),
-(4, 7, 'Legend of Blue Eyes White Dragon');
+(4, 7, 'Legend of Blue Eyes White Dragon'),
+(6, 1, 'Starstrike Blast');
 
 -- 4. Insert into eso_card
 -- 3: Elder Dragon
