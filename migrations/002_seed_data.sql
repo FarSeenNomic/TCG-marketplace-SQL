@@ -55,17 +55,17 @@ Roll Power
 (15, 'Deal 1 damage to each foe for each Elemental glyph in your spell.', 'Quality', 'Elemental');
 
 -- 5. Insert into account
-INSERT INTO account (id,cc, address) VALUES
-(1,1234567812345678, '123 Main St, Springfield'),
-(2,8765432187654321, '456 Elm St, Shelbyville'),
-(3,1111222233334444, '789 Oak Ave, Capital City'),
-(4,1231231231231231, '42 Wallaby way, Sydney'),
-(5,7777777777777777, '#4 privot drive, Cupboard under the stairs');
+INSERT INTO account (id, cc, address) VALUES
+(1, 1234567812345678, '123 Main St, Springfield'),
+(2, 8765432187654321, '456 Elm St, Shelbyville'),
+(3, 1111222233334444, '789 Oak Ave, Capital City'),
+(4, 1231231231231231, '42 Wallaby way, Sydney'),
+(5, 7777777777777777, '#4 privot drive, Cupboard under the stairs');
 -- account IDs: 1, 2, 3
 
 -- 6. Insert into seller_brand
 -- Account 1 sells MTG, Account 2 sells YGO
-INSERT INTO seller_brand (id, game, seller_status) VALUES
+INSERT INTO seller_brand (seller_id, game, seller_status) VALUES
 (1, 'Magic: The Gathering', 'yes'),
 (1, 'Yu-Gi-Oh!', 'pending'),
 (2, 'Yu-Gi-Oh!', 'yes'),
@@ -75,7 +75,7 @@ INSERT INTO seller_brand (id, game, seller_status) VALUES
 
 -- 7. Insert into cart
 -- Account 3 creates a cart
-INSERT INTO cart (id, buyer, archive) VALUES
+INSERT INTO cart (id, buyer_id, archive) VALUES
 (1, 3, TRUE),
 (2, 3, TRUE),
 (3, 3, FALSE),
@@ -96,8 +96,8 @@ INSERT INTO card_instance (id, instance_of, condition, seller, date, processed) 
 -- card_instance IDs: 1, 2, 3
 
 -- 9. Insert into specific_cart_item
--- Cart 1 adds specific card instances
-INSERT INTO specific_cart_item (card, cart) VALUES
+-- Cart 1 adds specific card_instance
+INSERT INTO specific_cart_item (card_instance, cart) VALUES
 (1, 1),
 (2, 1),
 (3, 2),
@@ -106,9 +106,9 @@ INSERT INTO specific_cart_item (card, cart) VALUES
 
 -- 10. Insert into generic_cart_item
 -- Cart 2 adds a generic quantity of Elder Dragon
-INSERT INTO generic_cart_item (quantity, card, cart) VALUES
-(1, 2, 3),
-(4, 3, 3),
-(3, 5, 3),
-(1, 7, 4),
-(2, 11, 5);
+INSERT INTO generic_cart_item (card, quantity, cart) VALUES
+(2, 1, 3),
+(3, 4, 3),
+(5, 3, 3),
+(7, 1, 4),
+(11, 2, 5);

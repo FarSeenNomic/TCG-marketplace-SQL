@@ -131,7 +131,7 @@ CREATE TABLE account (
 );
 
 CREATE TABLE seller_brand (
-  id BIGINT NOT NULL REFERENCES account(id) ON DELETE CASCADE,
+  seller_id BIGINT NOT NULL REFERENCES account(id) ON DELETE CASCADE,
   game VARCHAR(100) NOT NULL,
   seller_status account_seller_status,
   PRIMARY KEY (id, game)
@@ -139,7 +139,7 @@ CREATE TABLE seller_brand (
 
 CREATE TABLE cart (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  buyer BIGINT NOT NULL REFERENCES account(id) ON DELETE CASCADE,
+  buyer_id BIGINT NOT NULL REFERENCES account(id) ON DELETE CASCADE,
   archive BOOLEAN DEFAULT FALSE
 );
 
@@ -154,7 +154,7 @@ CREATE TABLE card_instance (
 
 CREATE TABLE specific_cart_item (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  card BIGINT REFERENCES card_instance(id) ON DELETE CASCADE,
+  card_instance BIGINT REFERENCES card_instance(id) ON DELETE CASCADE,
   cart BIGINT NOT NULL REFERENCES cart(id) ON DELETE CASCADE
 );
 
