@@ -102,7 +102,9 @@ WHERE NOT EXISTS (
     FROM card c
     WHERE c.id = g.card
 );
-  
+
+--Delete #6 Delete all accounts
+DELETE FROM account;
 
 -- Roll back so the database isn't permanently changed by demo deletes
 ROLLBACK;
