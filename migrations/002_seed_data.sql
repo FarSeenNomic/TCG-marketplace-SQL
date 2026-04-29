@@ -68,35 +68,47 @@ INSERT INTO account (id,cc, address) VALUES
 INSERT INTO seller_brand (id, game, seller_status) VALUES
 (1, 'Magic: The Gathering', 'yes'),
 (1, 'Yu-Gi-Oh!', 'pending'),
-(2, 'Yu-Gi-Oh!', 'no'),
+(2, 'Yu-Gi-Oh!', 'yes'),
 (2, 'ESO', 'yes'),
+(3, 'Yu-Gi-Oh!', 'no'),
 (2, 'Magic: The Gathering', 'pending');
 
 -- 7. Insert into cart
 -- Account 3 creates a cart
-INSERT INTO cart (buyer, archive) VALUES
-(3, FALSE),
-(1, TRUE);
+INSERT INTO cart (id, buyer, archive) VALUES
+(1, 3, TRUE),
+(2, 3, TRUE);
+(3, 3, FALSE);
+(4, 4, FALSE);
+(5, 5, TRUE);
 
 -- cart IDs: 1, 2
 
 -- 8. Insert into card_instance
 -- Sellers listing their cards
-INSERT INTO card_instance (instance_of, condition, seller, date, processed) VALUES
-(1, 9, 1, '2023-01-15', FALSE), -- Account 1 lists Black Lotus
-(2, 8, 2, '2023-02-20', FALSE), -- Account 2 lists Blue-Eyes White Dragon
-(4, 10, 2, '2023-03-05', TRUE);  -- Account 2 lists Dark Magician
+INSERT INTO card_instance (id, instance_of, condition, seller, date, processed) VALUES
+(1, 8, 9, 2, '2020-01-15', FALSE),
+(2, 9, 8, 1, '2023-02-20', TRUE),
+(3, 5, 8, 1, '2023-02-21', TRUE),
+(4, 6, 4, 1, '2024-02-30', FALSE),
+(5, 7, 10, 2, '2025-03-05', FALSE);
 
 -- card_instance IDs: 1, 2, 3
 
 -- 9. Insert into specific_cart_item
 -- Cart 1 adds specific card instances
-INSERT INTO specific_cart_item (card, cart) VALUES
-(1, 1),
-(2, 1);
+INSERT INTO specific_cart_item (id, card, cart) VALUES
+(1, 1, 1),
+(2, 2, 1),
+(3, 3, 2),
+(4, 4, 3),
+(5, 5, 4);
 
 -- 10. Insert into generic_cart_item
 -- Cart 2 adds a generic quantity of Elder Dragon
-INSERT INTO generic_cart_item (quantity, card, cart) VALUES
-(3, 3, 2),
-(1, 5, 1);
+INSERT INTO generic_cart_item (id, quantity, card, cart) VALUES
+(1, 1, 2, 3),
+(2, 4, 3, 3),
+(3, 3, 5, 3),
+(4, 1, 7, 4),
+(5, 2, 11, 5);
