@@ -77,9 +77,9 @@ INSERT INTO seller_brand (id, game, seller_status) VALUES
 -- Account 3 creates a cart
 INSERT INTO cart (id, buyer, archive) VALUES
 (1, 3, TRUE),
-(2, 3, TRUE);
-(3, 3, FALSE);
-(4, 4, FALSE);
+(2, 3, TRUE),
+(3, 3, FALSE),
+(4, 4, FALSE),
 (5, 5, TRUE);
 
 -- cart IDs: 1, 2
