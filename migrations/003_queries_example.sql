@@ -110,7 +110,10 @@ UPDATE cart
 SET archive = TRUE
 WHERE id = 1;
 
-
+-- UPDATE #4: Update the address of account 4
+UPDATE account
+SET address = '84 Harbor Blvd, Sydney'
+WHERE id = 4;
 -- =========================
 -- DELETE — 6 examples
 -- =========================
