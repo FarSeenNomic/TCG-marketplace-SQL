@@ -110,7 +110,10 @@ UPDATE cart
 SET archive = TRUE
 WHERE id = 1;
 
-
+-- UPDATE #5: Increase the quality of a generic cart item in cart 3 for card 5
+UPDATE generic_cart_item
+SET quantity = 5
+WHERE cart = 3 AND card = 5;
 -- =========================
 -- DELETE — 6 examples
 -- =========================
