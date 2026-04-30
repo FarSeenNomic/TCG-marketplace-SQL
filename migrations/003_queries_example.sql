@@ -90,7 +90,20 @@ WHERE NOT EXISTS (
     WHERE c.id = g.card
 );
 
-
+-- Read #6: Show all generic cart items with cart, buyer, card name, quantity, and subtotal
+SELECT 
+  ct.id AS cart_id,
+  a.id AS buyer_id,
+  a.address AS buyer_address,
+  c.cardname,
+  gci.quantity,
+  c.price,
+  (gci.quantity * c.price) AS subtotal
+FROM generic_cart_item gci
+JOIN cart ct ON ct.id = gci.cart
+JOIN acccount a ON a.id = ct.buyer_id
+JOIN card c ON c.id = gci.card
+ORDER BY ct.id, c.cardname,
 -- =========================
 -- UPDATE — 6 examples
 -- =========================
