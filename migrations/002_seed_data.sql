@@ -14,8 +14,8 @@ INSERT INTO card (id, cardname, price) VALUES
 (9, 'Aardvark Sloth', 0.12),
 (10, 'Blessing', 2.99),
 (11, 'Reach Through Mists', 0.16),
-(12, 'Beard\'o Blasty\'s', 0.50),
-(13, 'Pew and Pew\'s', 0.50),
+(12, 'Beard''o Blasty''s', 0.50),
+(13, 'Pew and Pew''s', 0.50),
 (14, 'Ballsy', 0.50),
 (15, 'Inferno-Tastic', 0.50);
 
@@ -90,7 +90,7 @@ INSERT INTO card_instance (id, instance_of, condition, seller, date, processed) 
 (1, 8, 9, 2, '2020-01-15', FALSE),
 (2, 9, 8, 1, '2023-02-20', TRUE),
 (3, 5, 8, 1, '2023-02-21', TRUE),
-(4, 6, 4, 1, '2024-02-30', FALSE),
+(4, 6, 4, 1, '2024-02-28', FALSE),
 (5, 7, 10, 2, '2025-03-05', FALSE);
 
 -- card_instance IDs: 1, 2, 3
