@@ -2,7 +2,7 @@
 -- Purpose: Example queries for TCG Marketplace project
 
 -- =========================
--- VIEW — 1 examples
+-- VIEW — 1 example
 -- =========================
 -- VIEW #1 - saves a select that shows a table of all ygo_cards and their parameters that appear in card table.
 CREATE VIEW ygo_card_view AS
@@ -15,7 +15,31 @@ SELECT
 FROM card c
 JOIN ygo_card y ON y.id = c.id;
 
+-- =========================
+-- TRIGGER — 1 example
+-- =========================
+-- TRIGGER #1 -
+CREATE OR REPLACE FUNCTION prevent_buying_own_card()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF EXISTS (
+        SELECT 1
+        FROM card_instance ci
+        JOIN cart c ON c.id = NEW.cart
+        WHERE ci.id = NEW.card_instance
+          AND ci.seller = c.buyer_id
+    ) THEN
+        RAISE EXCEPTION 'A seller cannot buy their own card listing.';
+    END IF;
 
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_prevent_buying_own_card
+BEFORE INSERT OR UPDATE ON specific_cart_item
+FOR EACH ROW
+EXECUTE FUNCTION prevent_buying_own_card();
 
 -- =========================
 -- READ (SELECT) — 6 examples
