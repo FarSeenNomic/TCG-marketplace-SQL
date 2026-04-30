@@ -110,7 +110,10 @@ UPDATE cart
 SET archive = TRUE
 WHERE id = 1;
 
-
+-- UPDATE # 6: Mark card instance 5 as processed
+UPDATE card_instance
+SET processed = TRUE
+WHERE id = 5;
 -- =========================
 -- DELETE — 6 examples
 -- =========================
