@@ -90,7 +90,20 @@ WHERE NOT EXISTS (
     WHERE c.id = g.card
 );
 
-
+--Read #5 show all processed card instances with card name and seller address
+SELECT 
+  ci.id AS instance_id,
+  c.cardname,
+  ci.condition,
+  ci.date AS listed_date,
+  a.id AS seller_id,
+  a.address AS seller_address
+FROM card_instance ci
+JOIN card c ON c.id = ci.instance_of
+JOIN account a ON a.id = ci.seller
+WHERE ci.processed = TRUE
+ORDER BY ci.date DESC;
+  
 -- =========================
 -- UPDATE — 6 examples
 -- =========================
