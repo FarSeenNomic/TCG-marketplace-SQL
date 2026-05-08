@@ -103,7 +103,21 @@ JOIN card c ON c.id = ci.instance_of
 JOIN account a ON a.id = ci.seller
 WHERE ci.processed = TRUE
 ORDER BY ci.date DESC;
-  
+
+-- Read #6: Show all generic cart items with cart, buyer, card name, quantity, and subtotal
+SELECT 
+  ct.id AS cart_id,
+  a.id AS buyer_id,
+  a.address AS buyer_address,
+  c.cardname,
+  gci.quantity,
+  c.price,
+  (gci.quantity * c.price) AS subtotal
+FROM generic_cart_item gci
+JOIN cart ct ON ct.id = gci.cart
+JOIN acccount a ON a.id = ct.buyer_id
+JOIN card c ON c.id = gci.card
+ORDER BY ct.id, c.cardname,
 -- =========================
 -- UPDATE — 6 examples
 -- =========================
@@ -127,6 +141,16 @@ WHERE id = 1;
 UPDATE account
 SET address = '84 Harbor Blvd, Sydney'
 WHERE id = 4;
+
+-- UPDATE #5: Increase the quality of a generic cart item in cart 3 for card 5
+UPDATE generic_cart_item
+SET quantity = 5
+WHERE cart = 3 AND card = 5;
+
+-- UPDATE # 6: Mark card instance 5 as processed
+UPDATE card_instance
+SET processed = TRUE
+WHERE id = 5;
 -- =========================
 -- DELETE — 6 examples
 -- =========================
